@@ -1,0 +1,56 @@
+body {
+	background-color: powderblue;
+}
+a.signup_button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+	text-align: center;
+    color: initial;
+	line-height: 18px;
+    width: 55px;
+    font-size: 10pt;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-right: 2px;
+    position:absolute;
+    top:5px;
+    right:70px;
+	cursor: pointer;
+}
+a.signup_button:hover{
+	opacity: 0.7
+}
+a.login_button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+	text-align: center;
+    color: initial;
+	line-height: 18px;
+    width: 55px;
+    font-size: 10pt;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-right: 2px;
+    position:absolute;
+    top:5px;
+    right:10px;
+	cursor: pointer;
+}
+a.login_button:hover{
+	opacity: 0.7
+}
+ul {
+	list-style-type: none;
+	border: 1px solid black;
+	height: 200px;
+	width: 18%;
+	overflow: hidden;
+	overflow-y: scroll;
+	font-size: 25pt;
+}
