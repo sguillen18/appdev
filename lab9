@@ -1,0 +1,40 @@
+window.onload = function(){
+    
+    var imgs = document.querySelectorAll(".artThumb");
+    //var imgs = document.getElementsByClassName(".artThumb");
+        
+    for (var i = 0; i < imgs.length; i++){
+                
+        //var img = imgs[i];
+        imgs[i].addEventListener("mouseover", function(e){
+            
+            var obj = e.target;
+            
+            var source = obj.getAttribute("src");
+            var number = source.substr(source.lastIndexOf("/")+1);
+            source = source.substr(0, source.indexOf("thumbs"));
+            source = source + number;
+
+            var span = document.createElement("span");
+            span.setAttribute("id", "spanImg");
+            
+            var newImg = document.createElement("img");
+            newImg.setAttribute("src", source);
+            newImg.setAttribute("class", "bigImg");
+            span.appendChild(newImg);
+            
+            obj.parentNode.appendChild(span);
+            
+        });
+            
+        
+        imgs[i].addEventListener("mouseout", function(e){
+
+            var obj = e.target;
+            
+            var spanImg = document.getElementById("spanImg");
+            obj.parentNode.removeChild(spanImg);
+
+        });  
+    }
+}
