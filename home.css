@@ -1,0 +1,164 @@
+body {
+	background-color: powderblue;
+}
+li{
+    margin-left: 10px;
+}
+.list{
+	list-style-type: decimal;
+	border: 5px solid black;
+	height: 550px;
+	width: 28%;
+	overflow: hidden;
+	overflow-y: scroll;
+    font-size: 22pt;
+    margin-left: 8%;
+    border-left: 8px dotted black;
+}
+h1{
+    margin-left: 8%;
+}
+h2{
+    position: absolute;
+    margin-left: 48%;
+    top: 28%;
+}
+#googleMap{
+    position: absolute;
+    right: 2%;
+    bottom: 9%;
+    height: 200px;
+    width: 50%;
+}
+.search{
+position:absolute;
+left: 30%;
+bottom: 22%;
+background-color: #252121;
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+}
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#252121;
+    color: #696A6F;
+    text-align: center;
+}
+.model-r .o-r {
+    background: #fff none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 100%;
+    bottom: 0;
+    height: 40px;
+    margin: auto;
+    overflow: hidden;
+    position: absolute;
+    left: -19px;
+    top: 0;
+    width: 40px;
+    z-index: 99999;
+}
+.model-r .o-r span {
+    background: #fff none repeat scroll 0 0;
+    border: 2px solid #ccc;
+    color: #666;
+    display: block;
+    height: 100%;
+    padding: 8px 0 0;
+    text-align: center;
+    width: 100%;
+    border-radius: 100%;
+    display:block;
+    position: relative;
+}
+.model-r {
+    padding-left: 30px;
+    position: relative;
+    border-left: 1px dotted #cccccc;
+}
+.forgot {
+    display: none;
+}
+
+.modal-header {
+  padding: 0;
+}
+.modal-header .close {
+  padding: 10px 15px;
+}
+.modal-header ul {
+  border: none;
+}
+.modal-header ul li {
+  margin: 0;
+}
+.modal-header ul li a {
+  border: none;
+  border-radius: 0;
+}
+.modal-header ul li.active a {
+  color: #e12f27;
+}
+.modal-header ul li a:hover {
+  border: none;
+}
+.modal-header ul li a span {
+  margin-left: 10px;
+}
+.modal-body .form-group {
+  margin-bottom: 10px;
+}
+
+/*a.signup_button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+	text-align: center;
+    color: initial;
+	line-height: 18px;
+    width: 55px;
+    font-size: 10pt;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-right: 2px;
+    position:absolute;
+    top:5px;
+    right:70px;
+	cursor: pointer;
+}
+a.signup_button:hover{
+	opacity: 0.7
+}
+a.login_button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+	text-align: center;
+    color: initial;
+	line-height: 18px;
+    width: 55px;
+    font-size: 10pt;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-right: 2px;
+    position:absolute;
+    top:5px;
+    right:10px;
+	cursor: pointer;
+}
+a.login_button:hover{
+	opacity: 0.7
