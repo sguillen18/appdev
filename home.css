@@ -19,9 +19,9 @@ h1{
     margin-left: 8%;
 }
 h2{
-    position: fixed;
+    position: absolute;
     margin-left: 48%;
-    top: 210px;
+    top: 28%;
 }
 #googleMap{
     position: absolute;
