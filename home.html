@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>F&uacutetbol Finder</title> 
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="home.css">   
+    
+
+    <!--<script type="map" src="googleMaps.js"></script>-->
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                  </button>
+                  <a class="navbar-brand" href="home.html">F&uacutetbolFinder</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a data-toggle="modal" data-target=".login-register-form"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            
+                  </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+	<h1>List of Parks</h1>
+		<nav>
+            <ul class="list">
+                <li><a href="test.html">Back Bay Fens</a></li>
+                <li><a href="test.html">Moakley Park</a></li>
+                <li><a href="test.html">Harambee Park</a></li>
+                <li><a href="test.html">Millennium Park</a></li>
+                <li><a href="test.html">Pagel Playground</a></li>
+                <li><a href="test.html">Portsmouth Street Playground</a></li>
+                <li><a href="test.html">Charlestown High School</a></li>
+                <li><a href="test.html">Reservation Road Park</a></li>
+                <li><a href="test.html">Mission Hill Playground</a></li>
+                <li><a href="test.html">Olmsted Park</a></li>
+                <li><a href="test.html">Ceylon Park</a></li>
+                <li><a href="test.html">East Boston Memorial</a></li>
+                <li><a href="test.html">Danehy Park</a></li>
+                <li><a href="test.html">Sennott Park</a></li>
+                <li><a href="test.html">Cambridge Common</a></li>
+            </ul>
+        </nav>
+
+    <h2>Map of Greater Boston</h2>
+        <div id="googleMap" style="height:400px;"></div>
+
+    <!--Google Maps API, Map & Markers -->
+
+        <script>
+            function myMap() {
+                var mapCenter= new google.maps.LatLng(42.350145,-71.057083);
+                var mapCanvas = document.getElementById("googleMap");
+                var mapOptions = {center: mapCenter, zoom: 12}
+                var map= new google.maps.Map(mapCanvas, mapOptions);
+
+                var fens= new google.maps.Marker({
+                    title: "Back Bay Fens",
+                    label: '1',
+                    position: new google.maps.LatLng(42.343466,-71.094582),
+                    url: "test.html"
+                });
+                fens.setMap(map);
+
+                var moakley= new google.maps.Marker({
+                    title: "Joe Moakley Park",
+                    label: '2',
+                    position: new google.maps.LatLng(42.325112,-71.049378)
+                });
+                moakley.setMap(map);
+
+                var harambee= new google.maps.Marker({
+                    title: "Harambee Park",
+                    label: '3',
+                    position: new google.maps.LatLng(42.291211,-71.088992)
+                });
+                harambee.setMap(map);
+
+                var millenium= new google.maps.Marker({
+                    title: "Millenium Park",
+                    label: '4',
+                    position: new google.maps.LatLng(42.280707, -71.177286)
+                });
+                millenium.setMap(map);
+
+                var pagel= new google.maps.Marker({
+                    title: "Pagel Playgrond",
+                    label: '5',
+                    position: new google.maps.LatLng(42.289079, -71.118671)
+                });
+                pagel.setMap(map);
+
+                var portsmouth= new google.maps.Marker({
+                    title: "Portsmouth Street",
+                    label: '6',
+                    position: new google.maps.LatLng(42.359309, -71.145409)
+                });
+                portsmouth.setMap(map);
+
+                var charlestown= new google.maps.Marker({
+                    title: "Charlestown High School",
+                    label: '7',
+                    position: new google.maps.LatLng(42.38008, -71.061059)
+                });
+                charlestown.setMap(map);
+
+                var reservation= new google.maps.Marker({
+                    title: "Reservation Road Park",
+                    label: '8',
+                    position: new google.maps.LatLng(42.250506, -71.128884)
+                });
+                reservation.setMap(map);
+
+                var mission= new google.maps.Marker({
+                    title: "Mission Hill Playground",
+                    label: '9',
+                    position: new google.maps.LatLng(42.333052, -71.09936)
+                });
+                mission.setMap(map);
+
+                var olmsted= new google.maps.Marker({
+                    title: "Olmsted Park",
+                    label: '10',
+                    position: new google.maps.LatLng(42.325945, -71.114887)
+                });
+                olmsted.setMap(map);
+
+                var ceylon= new google.maps.Marker({
+                    title: "Ceylon Park",
+                    label: '11',
+                    position: new google.maps.LatLng(42.30991, -71.073222)
+                });
+                ceylon.setMap(map);
+
+                var eastbm= new google.maps.Marker({
+                    title: "East Boston Memorial",
+                    label: '12',
+                    position: new google.maps.LatLng(42.372451, -71.034754)
+                });
+                eastbm.setMap(map);
+
+                var danehy= new google.maps.Marker({
+                    title: "Danehy Park",
+                    label: '13',
+                    position: new google.maps.LatLng(42.389005, -71.133103)
+                });
+                danehy.setMap(map);
+
+                var sennott= new google.maps.Marker({
+                    title: "Sennott Park",
+                    label: '14',
+                    position: new google.maps.LatLng(42.369153, -71.099986)
+                });
+                sennott.setMap(map);
+
+                var camcommon= new google.maps.Marker({
+                    title: "Cambridge Common",
+                    label: '15',
+                    position: new google.maps.LatLng(42.382086, -71.119367)
+                });
+                camcommon.setMap(map);
+            }        
+        </script>   
+        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtKLc6BMnOwu3yoCSUrr2PLBbDj-Y8_B4&callback=myMap"></script>
+
+        <!--End of Google Maps API functions -->
+
+
+            <!----MODAL FOR LOGIN/REGISTER-->
+    <div class="modal fade login-register-form" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#login-form"> Login <span class="glyphicon glyphicon-user"></span></a></li>
+                        <li><a data-toggle="tab" href="#registration-form"> Register <span class="glyphicon glyphicon-pencil"></span></a></li>
+                    </ul>
+                </div>
+                <div class="modal-body">
+                    <div class="tab-content">
+                        <div id="login-form" class="tab-pane fade in active">
+                            <form action="/">
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Password:</label>
+                                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="remember"> Remember me</label>
+                                </div>
+                                <button type="submit" class="btn btn-default">Login</button>
+                            </form>
+                        </div>
+                        <div id="registration-form" class="tab-pane fade">
+                            <form action="/">
+                                <div class="form-group">
+                                    <label for="name">Your Name:</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newemail">Email:</label>
+                                    <input type="email" class="form-control" id="newemail" placeholder="Enter new email" name="newemail">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newpwd">Password:</label>
+                                    <input type="password" class="form-control" id="newpwd" placeholder="New password" name="newpwd">
+                                </div>
+                                <button type="submit" class="btn btn-default">Register</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---END OF MODAL FOR LOGIN--> 
+
+<footer>
+    <p>Created by: Sean Guillen, Edgar Romero, Andres Prato, Shannon Cain. 2018.</p>
+</footer>
+        
+</body>
+</html>
+
+<!-- google maps api key: AIzaSyAtKLc6BMnOwu3yoCSUrr2PLBbDj-Y8_B4 -!>
