@@ -49,32 +49,8 @@
                     <li id="li2" >
                         <label class="description">Date: </label>
                         <span>
-                            <input id="month" name="month" class="text" size="2" maxlength="2" value="" type="text"> /
-                            <label>MM</label>
+                            <input type="date" class="text" id="date">
                         </span>
-                        <span>
-                            <input id="day" name="day" class="text" size="2" maxlength="2" value="" type="text"> /
-                            <label>DD</label>
-                        </span>
-                        <span>
-                            <input id="year" name="year" class="text" size="4" maxlength="4" value="" type="text">
-                            <label>YYYY</label>
-                        </span>
-
-                        <span id="calendar">
-                            <img id="calendar_img" class="datepicker" src="calendar.gif" alt="Pick a date.">	
-                        </span>
-                        <script type="text/javascript">
-                            Calendar.setup({
-                            inputField	 : "year",
-                            baseField    : "element_2",
-                            displayArea  : "calendar",
-                            button		 : "calendar_img",
-                            ifFormat	 : "%B %e, %Y",
-                            onSelect	 : selectDate
-                            });
-                        </script>
-
                     </li>		
                     
                     <li id="li3" >
@@ -84,7 +60,7 @@
                             <label>HH</label>
                         </span>
                         <span>
-                            <input id="minutes" name="minutes" class="text" size="2" type="text" maxlength="2" value=""/> : 
+                            <input id="minutes" name="minutes" class="text" size="2" type="text" maxlength="2" value=""/> 
                             <label>MM</label>
                         </span>
                         <span>
@@ -99,7 +75,7 @@
                     <li id="li4" >
                         <label class="description">Number of people: </label>
                         <div>
-                            <input id="number" name="number" class="text medium" type="text" maxlength="255" value=""/> 
+                            <input id="number" name="number" class="text medium" type="number" maxlength="255" value=""/> 
                         </div> 
                     </li>		
                     <li id="li5" >
