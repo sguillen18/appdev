@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <body>
+        <form name="reserveForm" action="" method="post">
+            <table>
+                <tr>
+                    <td>Enter Name</td>
+                    <td><input type="text" name="t1" id="t1"></td>
+                    <td><input type="button" name="b1" value="Go2DB" onClick="aa();"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</head>
+</html>
+
+<script type="text/javascript">
+function aa(){
+    var xmlhttp;
+    xmlhttp=new XMLHttpRequest();
+    xmlhttp.open("GET", "insert.php?name="+document.getElementById("t1").value, false);
+    xmlhttp.send(null);
+    alert("working");
+}
+</script>
