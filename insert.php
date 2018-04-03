@@ -11,10 +11,10 @@
 	$name = $_GET["name"];
     $date = $_GET["date"];
     $time = $_GET["time"];
-    $number_of_poeple = $_GET["number_of_people"];
+    $people = $_GET["number_of_people"];
     $notes = $_GET["notes"];
 
-	$sql = "INSERT INTO test_t (name, date, time, number_of_people, notes) VALUES [('$name'), ('$date'), ('$time'), ('$number_of_people'), ('$notes')";
+	$sql = "INSERT INTO test_t (name, r_date, r_time, number_of_people, notes) VALUES (('$name'), ('$date'), ('$time'), ('$people'), ('$notes'))";
 	
 	if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
