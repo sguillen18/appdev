@@ -189,15 +189,15 @@
 function getValues(){
     var xmlhttp;
     xmlhttp=new XMLHttpRequest();
-    xmlhttp.open("GET", "insert.php?name="+document.getElementById("name").value, false);
-    
+    var name = document.getElementById("name").value;
+
     var year = document.getElementById("year").value;
     var month = document.getElementById("month").value;
     var day = document.getElementById("day").value;
     
     var date = year + "/" + month + "/" + day;
-    xmlhttp.open("GET", "insert.php?date="+date, false);
-    
+
+
     var hour = document.getElementById("hour").value;
     var minutes = document.getElementById("minutes").value;
     
@@ -205,12 +205,25 @@ function getValues(){
     var am_pm = e.options[e.selectedIndex].value;
     
     var time = hour + ":" + minutes + " " + am_pm;
-    xmlhttp.open("GET", "insert.php?time="+time, false);
-    
-    xmlhttp.open("GET", "insert.php?number_of_people="+document.getElementById("number").value, false);
-    xmlhttp.open("GET", "insert.php?notes="+document.getElementById("notes").value, false);
+
+    var number_of_people = document.getElementById("number").value;
+    var notes = document.getElementById("notes").value;
+
+    xmlhttp.open("GET", "insert.php?name="+name+"&date=" + date + "&time=" + time + "&people=" + number_of_people + "&notes=" + notes, false);
     xmlhttp.send(null);
-    alert(date + "  " + time);
+
+
+    // xmlhttp.open("GET", "insert.php?date="+date, false);
+    // xmlhttp.send(null);
+
+    // xmlhttp.open("GET", "insert.php?time="+time, false);
+    // xmlhttp.send(null);
+
+    // xmlhttp.open("GET", "insert.php?number_of_people="+document.getElementById("number").value, false);
+    // xmlhttp.send(null);
+
+    // xmlhttp.open("GET", "insert.php?notes="+document.getElementById("notes").value, false);
+    // xmlhttp.send(null);
+    alert(name + " " + date + "  " + time + "number= " + number_of_people);
 }
 </script>
-
