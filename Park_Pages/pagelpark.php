@@ -1,4 +1,21 @@
 <!DOCTYPE html>
+<?php
+    
+    include "testconfig.php";
+
+$conn = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+if (!$conn) {
+    die ('Failed to connect to MySQL: ' . mysqli_connect_error());  
+}
+
+$sql = 'SELECT * FROM Reservation_t WHERE Park_Id = 5';
+        
+$query = mysqli_query($conn, $sql);
+
+if (!$query) {
+    die ('SQL Error: ' . mysqli_error($conn));
+}
+?>
 <html>
     <head>
         <title>Futbol Finder</title> 
@@ -110,6 +127,7 @@
 		
 	<!--Shannon's Reservation Table-->
 		<table class="GeneratedTable">
+            <h2>Pagel Park</h2>
 		<thead>
 			<tr>
 			<th>Name</th>
@@ -122,60 +140,27 @@
 		
   <tbody>
   
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>...</td>
-		</tr>
-		
-		<tr>
-			<td>...</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td>...</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td>...</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td>...</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>...</td>
-		</tr>
+		<?php
+        $no     = 1;
+        $total  = 0;
+        while ($row = mysqli_fetch_array($query))
+        {
+            echo '<tr>
+                    <td>'.$row['Reservation_Name'].'</td>
+                    <td>'.$row['Reservation_Date'].'</td>
+                    <td>'.$row['Reservation_Time'].'</td>
+                    <td>'.$row['Reservation_People'].'</td>
+                    <td>'.$row['Reservation_Notes'].'</td>
+                </tr>';
+        }
+    ?>
   </tbody>
 </table>
 		
 	
 	<!--Google Maps Directions-->
 		<div>
-			<a class="button" href="https://www.google.com/maps/dir/''/back+bay+fens/@42.3434582,-71.1646039,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89e37a1e29987cdd:0x6e56493aa0fbdf69!2m2!1d-71.094564!2d42.3434795">Directions</a>
+			<a class="button" href="https://www.google.com/maps/dir//Pagel+Playground,+Boston,+MA+02131/@42.2892194,-71.1209912,17z/data=!4m17!1m7!3m6!1s0x89e3794a574fb085:0x292a44ff6956f590!2sPagel+Playground,+Boston,+MA+02131!3b1!8m2!3d42.2890785!4d-71.1186711!4m8!1m0!1m5!1m1!1s0x89e3794a574fb085:0x292a44ff6956f590!2m2!1d-71.1186711!2d42.2890785!3e3">Directions</a>
 		</div>
 	</body>	
 	
@@ -187,20 +172,15 @@
 
 <script type="text/javascript">
 function getValues(){
-
-    var id = 1;
-
+    var id = 5;
     var xmlhttp;
     xmlhttp=new XMLHttpRequest();
     var name = document.getElementById("name").value;
-
     var year = document.getElementById("year").value;
     var month = document.getElementById("month").value;
     var day = document.getElementById("day").value;
     
     var date = year + "/" + month + "/" + day;
-
-
     var hour = document.getElementById("hour").value;
     var minutes = document.getElementById("minutes").value;
     
@@ -208,23 +188,16 @@ function getValues(){
     var am_pm = e.options[e.selectedIndex].value;
     
     var time = hour + ":" + minutes + " " + am_pm;
-
     var number_of_people = document.getElementById("number").value;
     var notes = document.getElementById("notes").value;
-
-    xmlhttp.open("GET", "insert.php?name="+name+"&date=" + date + "&time=" + time + "&people=" + number_of_people + "&notes=" + notes +"&id=" + id, false);
+    xmlhttp.open("GET", "insert.php?name="+name+"&date=" + date + "&time=" + time + "&number_of_people=" + number_of_people + "&notes=" + notes +"&id=" + id, false);
     xmlhttp.send(null);
-
-
     // xmlhttp.open("GET", "insert.php?date="+date, false);
     // xmlhttp.send(null);
-
     // xmlhttp.open("GET", "insert.php?time="+time, false);
     // xmlhttp.send(null);
-
     // xmlhttp.open("GET", "insert.php?number_of_people="+document.getElementById("number").value, false);
     // xmlhttp.send(null);
-
     // xmlhttp.open("GET", "insert.php?notes="+document.getElementById("notes").value, false);
     // xmlhttp.send(null);
     alert(name + " " + date + "  " + time + "number= " + number_of_people);

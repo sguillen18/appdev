@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+
+<?php
+    
+    include "testconfig.php";
+
+$conn = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+if (!$conn) {
+    die ('Failed to connect to MySQL: ' . mysqli_connect_error());  
+}
+
+$sql = 'SELECT * FROM Reservation_t WHERE Park_Id = 1';
+        
+$query = mysqli_query($conn, $sql);
+
+if (!$query) {
+    die ('SQL Error: ' . mysqli_error($conn));
+}
+?>
 <html>
     <head>
         <title>Futbol Finder</title> 
@@ -33,9 +51,7 @@
             </nav>
         </header>
 		
-		<!-- park title -->
-<!-- 		<h1>Park Name Here<h1> -->
-		
+		<!-- park title -->	
 		
         <div id="form_container">
             <form id="form_3462" class="appnitro"  method="post" action="">
@@ -110,6 +126,7 @@
 		
 	<!--Shannon's Reservation Table-->
 		<table class="GeneratedTable">
+            <h2>BACK BAY</h2>
 		<thead>
 			<tr>
 			<th>Name</th>
@@ -121,54 +138,20 @@
 		</thead>
 		
   <tbody>
-  
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>...</td>
-		</tr>
-		
-		<tr>
-			<td>...</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td>...</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td>...</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td>...</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>...</td>
-		</tr>
+    <?php
+        $no     = 1;
+        $total  = 0;
+        while ($row = mysqli_fetch_array($query))
+        {
+            echo '<tr>
+                    <td>'.$row['Reservation_Name'].'</td>
+                    <td>'.$row['Reservation_Date'].'</td>
+                    <td>'.$row['Reservation_Time'].'</td>
+                    <td>'.$row['Reservation_People'].'</td>
+                    <td>'.$row['Reservation_Notes'].'</td>
+                </tr>';
+        }
+    ?>
   </tbody>
 </table>
 		
@@ -212,7 +195,7 @@ function getValues(){
     var number_of_people = document.getElementById("number").value;
     var notes = document.getElementById("notes").value;
 
-    xmlhttp.open("GET", "insert.php?name="+name+"&date=" + date + "&time=" + time + "&people=" + number_of_people + "&notes=" + notes +"&id=" + id, false);
+    xmlhttp.open("GET", "insert.php?name="+name+"&date=" + date + "&time=" + time + "&number_of_people=" + number_of_people + "&notes=" + notes +"&id=" + id, false);
     xmlhttp.send(null);
 
 

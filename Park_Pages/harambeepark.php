@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+
+<?php
+    
+    include "testconfig.php";
+
+$conn = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+if (!$conn) {
+    die ('Failed to connect to MySQL: ' . mysqli_connect_error());  
+}
+
+$sql = 'SELECT * FROM Reservation_t WHERE Park_Id = 3';
+        
+$query = mysqli_query($conn, $sql);
+
+if (!$query) {
+    die ('SQL Error: ' . mysqli_error($conn));
+}
+?>
 <html>
     <head>
         <title>Futbol Finder</title> 
@@ -110,6 +128,7 @@
 		
 	<!--Shannon's Reservation Table-->
 		<table class="GeneratedTable">
+            <h2>HARAMBEE PARK</h2>
 		<thead>
 			<tr>
 			<th>Name</th>
@@ -121,61 +140,27 @@
 		</thead>
 		
   <tbody>
-  
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>...</td>
-		</tr>
-		
-		<tr>
-			<td>...</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td>...</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td>...</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td>...</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>...</td>
-		</tr>
+		 <?php
+        $no     = 1;
+        $total  = 0;
+        while ($row = mysqli_fetch_array($query))
+        {
+            echo '<tr>
+                    <td>'.$row['Reservation_Name'].'</td>
+                    <td>'.$row['Reservation_Date'].'</td>
+                    <td>'.$row['Reservation_Time'].'</td>
+                    <td>'.$row['Reservation_People'].'</td>
+                    <td>'.$row['Reservation_Notes'].'</td>
+                </tr>';
+        }
+    ?>
   </tbody>
 </table>
 		
 	
 	<!--Google Maps Directions-->
 		<div>
-			<a class="button" href="https://www.google.com/maps/dir/''/back+bay+fens/@42.3434582,-71.1646039,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89e37a1e29987cdd:0x6e56493aa0fbdf69!2m2!1d-71.094564!2d42.3434795">Directions</a>
+			<a class="button" href="https://www.google.com/maps/dir//Harambee+Park,+Blue+Hill+Avenue,+Boston,+MA/@42.2920385,-71.1547308,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89e37bef78f9b9b3:0x1aea05ea8116550f!2m2!1d-71.0846897!2d42.2920598">Directions</a>
 		</div>
 	</body>	
 	
@@ -188,19 +173,16 @@
 <script type="text/javascript">
 function getValues(){
 
-    var id = 1;
+	var id = 3;
 
     var xmlhttp;
     xmlhttp=new XMLHttpRequest();
     var name = document.getElementById("name").value;
-
     var year = document.getElementById("year").value;
     var month = document.getElementById("month").value;
     var day = document.getElementById("day").value;
     
     var date = year + "/" + month + "/" + day;
-
-
     var hour = document.getElementById("hour").value;
     var minutes = document.getElementById("minutes").value;
     
@@ -208,23 +190,16 @@ function getValues(){
     var am_pm = e.options[e.selectedIndex].value;
     
     var time = hour + ":" + minutes + " " + am_pm;
-
     var number_of_people = document.getElementById("number").value;
     var notes = document.getElementById("notes").value;
-
-    xmlhttp.open("GET", "insert.php?name="+name+"&date=" + date + "&time=" + time + "&people=" + number_of_people + "&notes=" + notes +"&id=" + id, false);
+    xmlhttp.open("GET", "insert.php?name="+name+"&date=" + date + "&time=" + time + "&number_of_people=" + number_of_people + "&notes=" + notes +"&id=" + id, false);
     xmlhttp.send(null);
-
-
     // xmlhttp.open("GET", "insert.php?date="+date, false);
     // xmlhttp.send(null);
-
     // xmlhttp.open("GET", "insert.php?time="+time, false);
     // xmlhttp.send(null);
-
     // xmlhttp.open("GET", "insert.php?number_of_people="+document.getElementById("number").value, false);
     // xmlhttp.send(null);
-
     // xmlhttp.open("GET", "insert.php?notes="+document.getElementById("notes").value, false);
     // xmlhttp.send(null);
     alert(name + " " + date + "  " + time + "number= " + number_of_people);
