@@ -44,96 +44,79 @@
 </div>
 
 <main>
-  <div class="container">
+  
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+      <button class="btn" onclick="filterSelection('boston')"> Boston</button>
+      <button class="btn" onclick="filterSelection('cambridge')"> Cambridge</button>
+      <button class="btn" onclick="filterSelection('brookline')"> Brookline</button>
+        <!---
+       <button class="btn" onclick="filterSelection('3v3')"> 3v3</button>
+      <button class="btn" onclick="filterSelection('5v5')"> 5v5</button>
+      <button class="btn" onclick="filterSelection('7v7')"> 7v7</button>
+    </div>
+        --->
+    </div>
     <div class="row">
-      <div class="col-md-6">
-        <h2>Select Location</h2>
-        <form>
-          <select class="selectpicker">
-            <option>Boston</option>
-            <option>Cambridge</option>
-            <option>Brookeline</option>
-          </select>
-        </form>
-      </div>
-      <div class="col-md-6">
-        <h2>Number of Players</h2>
-        <form>
-          <select class="selectpicker">
-            <option>3 v 3</option>
-            <option>5 v 5</option>
-            <option>7 v 7</option>
-          </select>
-        </form>
+  <div class="column boston">
+    <div class="content">
+      <img src="Park_images/Back_Bay_Fens.jpg" alt="Mountains" style="width:100%">
+      <h4>Back Bay Fens</h4>
+    </div>
+  </div>
+  <div class="column cambridge">
+    <div class="content">
+      <img src="Park_Images/Moakley_Park.jpg" alt="Lights" style="width:100%">
+      <h4>Moakley Park</h4>
+    </div>
+  </div>
+  <div class="column boston">
+    <div class="content">
+      <img src="Park_Images/Harambee_Park.jpg" alt="Nature" style="width:100%">
+      <h4>Harambee Park</h4>
     </div>
   </div>
 
-
-  <div class="container-fluid bg-3 text-center">    
-    <h3>Parks meeting criteria</h3><br>
-    <div class="row">
-      <div class="col-sm-3">
-        <p>Back Bay Fens</p>
-        <img src="Park_Images/Back_Bay_Fens.jpg" class="img-responsive" style="width:100%" alt="Park 1">
-      </div>
-      <div class="col-sm-3"> 
-        <p>Moakley Park</p>
-        <img src="Park_Images/Moakley_Park.jpg" class="img-responsive" style="width:100%" alt="Park 2">
-      </div>
-      <div class="col-sm-3"> 
-        <p>Harambee Park</p>
-        <img src="Park_Images/Harambee_Park.jpg" class="img-responsive" style="width:100%" alt="Park 3">
-      </div>
-      <div class="col-sm-3">
-        <p>Millennium Park</p>
-        <img src="Park_Images/Millennium_Park.jpg" class="img-responsive" style="width:100%" alt="Park 4">
-      </div>
+  <div class="column brookline">
+    <div class="content">
+      <img src="Park_Images/Millennium_Park.jpg" alt="Car" style="width:100%">
+      <h4>Millennium Park</h4>
     </div>
-  </div><br>
-
-  <div class="container-fluid bg-3 text-center">    
-    <div class="row">
-      <div class="col-sm-3">
-        <p>Pagel Playground</p>
-        <img src="Park_Images/Pagel_Playground.png" class="img-responsive" style="width:100%" alt="Park 5">
-      </div>
-      <div class="col-sm-3"> 
-        <p>Portsmouth Street Playground</p>
-        <img src="Park_Images/Portsmouth_Playground.png" class="img-responsive" style="width:100%" alt="Park 6">
-      </div>
-      <div class="col-sm-3"> 
-        <p>Charlestown High School</p>
-        <img src="Park_Images/Charlestown_High.png" class="img-responsive" style="width:100%" alt="Park 7">
-      </div>
-      <div class="col-sm-3">
-        <p>Reservation Road Park</p>
-        <img src="Park_Images/Reservation_Park.png" class="img-responsive" style="width:100%" alt="Park 8">
-      </div>
+  </div>
+  <div class="column brookline">
+    <div class="content">
+      <img src="Park_Images/Pagel_Playground.png" alt="Car" style="width:100%">
+      <h4>Pagel Playground</h4>
     </div>
-  </div><br><br>
-
-
-  <div class="container-fluid bg-3 text-center">    
-    <div class="row">
-      <div class="col-sm-3">
-        <p>Mission Hill Playground</p>
-        <img src="Park_Images/MissionHill_Park.jpg" class="img-responsive" style="width:100%" alt="Park 5">
-      </div>
-      <div class="col-sm-3"> 
-        <p>Ceylon Park</p>
-        <img src="Park_Images/Ceylon_Park.jpg" class="img-responsive" style="width:100%" alt="Park 6">
-      </div>
-      <div class="col-sm-3"> 
-        <p>Danehy Park</p>
-        <img src="Park_Images/Danehy_Park.jpg" class="img-responsive" style="width:100%" alt="Park 7">
-      </div>
-      <div class="col-sm-3">
-        <p>Sennot Park</p>
-        <img src="Park_Images/Sennott_Park.jpg" class="img-responsive" style="width:100%" alt="Park 8">
-      </div>
+  </div>
+  <div class="column boston">
+    <div class="content">
+      <img src="Park_Images/Portsmouth_Playground.png" alt="Car" style="width:100%">
+      <h4>Portsmouth Playground</h4>
     </div>
-  </div><br><br>
+  </div>
 
+  <div class="column cambridge">
+    <div class="content">
+      <img src="Park_Images/Charlestown_High.png" alt="People" style="width:100%">
+      <h4>Charlestown High</h4>
+    </div>
+  </div>
+  <div class="column brookline">
+    <div class="content">
+      <img src="Park_Images/Reservation_Park.png" alt="People" style="width:100%">
+      <h4>Reservation Park</h4>
+    </div>
+  </div>
+  <div class="column cambridge">
+    <div class="content">
+      <img src="Park_Images/MissionHill_Park.jpg" alt="People" style="width:100%">
+      <h4>Mission Hill Park</h4>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+    
 </main>
 
 <footer>
@@ -142,3 +125,65 @@
 
 </body>
 </html>
+
+<script>
+filterSelection("all") // Execute the function and show all columns
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1); 
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
